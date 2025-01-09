@@ -4,8 +4,8 @@
 #include <ESP8266WiFi.h>
 
 // WiFi 配置
-const char* ssid = "JCOM_CWYE";
-const char* password = "338667412746";
+const char* ssid = "...";
+const char* password = "...";
 
 void setup() {
   Serial.begin(115200);
