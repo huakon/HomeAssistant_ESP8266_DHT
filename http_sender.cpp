@@ -22,7 +22,7 @@ void sendHTTPTemperature(float temperature) {
   http.addHeader("Content-Type", "application/json");
 
   String payload = "{\"state\": \"" + String(temperature) + "\", \"attributes\": {\"unit_of_measurement\": \"°C\", \"friendly_name\": \"DHT Temperature\"}}";
-  int httpResponseCode = http.PUT(payload);
+  int httpResponseCode = http.POST(payload);
   Serial.println("Temperature HTTP Response code: " + String(httpResponseCode));
   http.end();
 }
@@ -35,7 +35,7 @@ void sendHTTPHumidity(float humidity) {
   http.addHeader("Content-Type", "application/json");
 
   String payload = "{\"state\": \"" + String(humidity) + "\", \"attributes\": {\"unit_of_measurement\": \"%\", \"friendly_name\": \"DHT Humidity\"}}";
-  int httpResponseCode = http.PUT(payload);
+  int httpResponseCode = http.POST(payload);
   Serial.println("Humidity HTTP Response code: " + String(httpResponseCode));
   http.end();
 }
