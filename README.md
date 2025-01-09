@@ -41,7 +41,7 @@ const char* mqtt_topic_temp = "home/sensor/temperature";
 const char* mqtt_topic_humidity = "home/sensor/humidity";
 ```
 
-#### HTTP PUT 配置  
+#### HTTP POST 配置  
 打开 `http_sender.cpp`，修改以下内容：  
 ```cpp
 const char* hass_url_temp = "https://YOUR_HASS_URL/api/states/sensor.dht_temperature";
@@ -52,10 +52,10 @@ const char* hass_token = "YOUR_HASS_TOKEN";
 ### 4. 启用发送方式  
 在 `main.ino` 的 `loop()` 函数中，根据需要启用 MQTT 或 HTTP 的数据发送：  
 - **启用 MQTT**：调用 `sendMQTTTemperature()` 和 `sendMQTTHumidity()`。  
-- **启用 HTTP PUT**：调用 `sendHTTPTemperature()` 和 `sendHTTPHumidity()`。  
+- **启用 HTTP POST**：调用 `sendHTTPTemperature()` 和 `sendHTTPHumidity()`。  
 - **同时启用**：无需修改，保留所有函数调用即可。  
 
-例如，只使用 HTTP PUT，可以将 MQTT 函数注释掉：  
+例如，只使用 HTTP POST，可以将 MQTT 函数注释掉：  
 ```cpp
 void loop() {
   float temperature = readTemperature();
