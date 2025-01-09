@@ -1,10 +1,14 @@
 #include "http_sender.h"
 #include <ESP8266HTTPClient.h>
+#include <WiFiClient.h>
 
 // Home Assistant 配置
-const char* hass_url_temp = "https://.../api/states/sensor.dht_temperature";
-const char* hass_url_humidity = "https://.../api/states/sensor.dht_humidity";
+const char* hass_url_temp = "https://YOUR_HASS_URL/api/states/sensor.dht_temperature";
+const char* hass_url_humidity = "https://YOUR_HASS_URL/api/states/sensor.dht_humidity";
 const char* hass_token = "YOUR_HASS_TOKEN";
+
+// 创建 WiFiClient 对象
+WiFiClient client;
 
 void initHTTPSender() {
   // 如果需要初始化其他内容，可以在这里完成
@@ -12,7 +16,8 @@ void initHTTPSender() {
 
 void sendHTTPTemperature(float temperature) {
   HTTPClient http;
-  http.begin(hass_url_temp);
+  // 使用新的 begin 方法
+  http.begin(client, hass_url_temp);  
   http.addHeader("Authorization", "Bearer " + String(hass_token));
   http.addHeader("Content-Type", "application/json");
 
@@ -24,7 +29,8 @@ void sendHTTPTemperature(float temperature) {
 
 void sendHTTPHumidity(float humidity) {
   HTTPClient http;
-  http.begin(hass_url_humidity);
+  // 使用新的 begin 方法
+  http.begin(client, hass_url_humidity);  
   http.addHeader("Authorization", "Bearer " + String(hass_token));
   http.addHeader("Content-Type", "application/json");
 
