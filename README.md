@@ -5,7 +5,7 @@
 
 本项目使用 ESP8266 和 DHT11 传感器采集温湿度数据，并通过以下方式发送：  
 - **MQTT**：将温湿度数据发送到指定的 MQTT 服务器主题；  
-- **HTTP PUT**：通过 HTTP 请求将温湿度数据上传至 Home Assistant 或其他 REST API 服务器。
+- **HTTP POST**：通过 HTTP 请求将温湿度数据上传至 Home Assistant 或其他 REST API 服务器。
 
 
 ---
