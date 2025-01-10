@@ -47,7 +47,7 @@ void loop() {
   sendMQTTTemperature(temperature);
   sendMQTTHumidity(humidity);
 
-  // 通过 HTTP PUT 发送数据
+  // 通过 HTTP POST 发送数据
   sendHTTPTemperature(temperature);
   sendHTTPHumidity(humidity);
 
