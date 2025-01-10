@@ -27,7 +27,7 @@ void setupSecureConnection() {
     "...省略证书...\n" \
     "-----END CERTIFICATE-----\n";
   
-  client.setTrustAnchors(new X509List(rootCACertificate));  // 设置根证书
+  client.setCACert(rootCACertificate);  // 设置根证书
 }
 
 // HTTP POST 发送数据
