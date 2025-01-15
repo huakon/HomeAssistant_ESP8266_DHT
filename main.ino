@@ -1,11 +1,8 @@
 #include "dht_sensor.h"
 #include "mqtt_sender.h"
+#include "config.h"
 #include "http_sender.h"
 #include <ESP8266WiFi.h>
-
-// WiFi 配置
-const char* ssid = "...";
-const char* password = "...";
 
 void setup() {
   Serial.begin(115200);
