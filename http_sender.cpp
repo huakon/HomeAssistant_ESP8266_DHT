@@ -6,11 +6,6 @@
 // 初始化 WiFiClientSecure
 WiFiClientSecure client;
 
-// Home Assistant API 配置
-const char* hass_url_temp = "https://your_home_assistant_url/api/states/sensor.dht_temperature";
-const char* hass_url_humidity = "https://your_home_assistant_url/api/states/sensor.dht_humidity";
-const char* hass_token = "YOUR_HASS_TOKEN";  // 请替换为您自己的 Home Assistant Token
-
 // 选择是否跳过证书验证 (仅用于调试)
 bool skipCertificateVerification = true;  // 设置为 true 跳过证书验证
 
