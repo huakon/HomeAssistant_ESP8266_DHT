@@ -11,6 +11,6 @@ const char* hass_url_humidity = "https://your_home_assistant_url/api/states/sens
 const char* hass_token = "YOUR_HASS_TOKEN";
 
 // 是否启用 HTTPS 验证（true 为验证证书，false 为跳过验证）
-const bool ENABLE_HTTPS = false;
+const bool skipCertificateVerification = false;
 
 #endif // CONFIG_H
