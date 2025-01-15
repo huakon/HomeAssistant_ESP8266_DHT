@@ -6,8 +6,7 @@
 // 初始化 WiFiClientSecure
 WiFiClientSecure client;
 
-// 选择是否跳过证书验证 (仅用于调试)
-bool skipCertificateVerification = true;  // 设置为 true 跳过证书验证
+
 
 // 跳过证书验证
 void setupInsecureConnection() {
