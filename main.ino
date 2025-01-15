@@ -2,6 +2,7 @@
 #include "mqtt_sender.h"
 #include "config.h"
 #include "http_sender.h"
+#include "ota_update.h"
 #include <ESP8266WiFi.h>
 
 void setup() {
@@ -18,6 +19,8 @@ void setup() {
     Serial.print(".");
   }
   Serial.println("\nWi-Fi connected.");
+  // 初始化 OTA 更新功能
+  setupOTA();
 
   // 初始化 MQTT 和 HTTP 发送模块
   initMQTTSender();
@@ -25,6 +28,9 @@ void setup() {
 }
 
 void loop() {
+  // 处理 OTA 更新
+  handleOTA();
+
   // 读取传感器数据
   float temperature = readTemperature();
   float humidity = readHumidity();
