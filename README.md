@@ -26,14 +26,13 @@
 ### 3. 配置文件
 
 #### WiFi 配置  
-打开 `main.ino` 文件，修改 WiFi 名称和密码：  
+打开 `config.h` 文件，修改 WiFi 名称和密码：  
 ```cpp
 const char* ssid = "YOUR_WIFI_SSID";
 const char* password = "YOUR_WIFI_PASSWORD";
 ```
 
-#### MQTT 配置  
-打开 `mqtt_sender.cpp`，修改以下内容：  
+#### MQTT 配置    
 ```cpp
 const char* mqtt_server = "YOUR_MQTT_SERVER";
 const int mqtt_port = YOUR_MQTT_PORT;  // 通常是 1883
@@ -41,8 +40,7 @@ const char* mqtt_topic_temp = "home/sensor/temperature";
 const char* mqtt_topic_humidity = "home/sensor/humidity";
 ```
 
-#### HTTP POST 配置  
-打开 `http_sender.cpp`，修改以下内容：  
+#### HTTP POST 配置    
 ```cpp
 const char* hass_url_temp = "https://YOUR_HASS_URL/api/states/sensor.dht_temperature";
 const char* hass_url_humidity = "https://YOUR_HASS_URL/api/states/sensor.dht_humidity";
@@ -84,6 +82,7 @@ void loop() {
 ```
 项目目录
 ├── main.ino               主程序，负责调用各模块
+├── config.h               配置文件
 ├── dht_sensor.h/.cpp      DHT 传感器模块
 │   ├── 初始化传感器
 │   ├── 读取温度数据
